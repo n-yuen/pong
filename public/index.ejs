@@ -1,0 +1,46 @@
+<html>
+
+<head>
+    <title>pong but butter</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div id="toolbar">
+        <div class="formLabel" id="fl1">Player 1 Name: </div>
+        <input id="p1name" type="text" name="name">
+        <div id="scoreboard">
+            <div id="p1score">0</div>-
+            <div id="p2score">0</div>
+        </div>
+        <div class="formLabel" id="fl2">Player 2 Name:</div>
+        <input id="p2name" type="text" name="name">
+        <!--<button id="start">Start</button>-->
+    </div>
+    <div id="horizcontainer">
+        <div id="game">
+            <div id="notificationbox">25 to win</div>
+            <div class="paddle" id="p1"></div>
+            <div class='ball' id='ball'></div>
+            <div class="paddle" id="p2"></div>
+            <div id="gameoverlay">Start!</div>
+        </div>
+        <div id="leaderboard">
+            <div id="lblabel">Top Players</div>
+            <div class="lbentry">
+                    <div class="entryname paddingleft">Name</div>
+                    <div class="entryscore">Wins</div>
+                </div>
+            <% var len = lb.length; for(i=0; i<len; i++){ %>
+                <div class="lbentry">
+                    <div clas="lbnumber"><%= i + 1 + ': '%></div>
+                    <div class="entryname"><%= lb[i].name%></div>
+                    <div class="entryscore"><%= lb[i].score%></div>
+                </div>
+                <% } %>
+        </div>
+    </div>
+    <script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>
